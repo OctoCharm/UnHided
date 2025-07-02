@@ -56,9 +56,9 @@ class Settings(BaseSettings):
     log_level: str = "INFO"  # The logging level to use.
     transport_config: TransportConfig = Field(default_factory=TransportConfig)  # Configuration for httpx transport.
     enable_streaming_progress: bool = False  # Whether to enable streaming progress tracking.
-    disable_home_page: bool = False  # Whether to disable the home page UI.
-    disable_docs: bool = False  # Whether to disable the API documentation (Swagger UI).
-    disable_speedtest: bool = False  # Whether to disable the speedtest UI.
+    disable_home_page: bool = True  # Whether to disable the home page UI.
+    disable_docs: bool = True  # Whether to disable the API documentation (Swagger UI).
+    disable_speedtest: bool = True  # Whether to disable the speedtest UI.
     stremio_proxy_url: str | None = None  # The Stremio server URL for alternative content proxying.
     m3u8_content_routing: Literal["mediaflow", "stremio", "direct"] = (
         "mediaflow"  # Routing strategy for M3U8 content URLs: "mediaflow", "stremio", or "direct"
